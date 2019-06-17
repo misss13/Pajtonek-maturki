@@ -44,12 +44,17 @@ def trzy():
         for line in file:
             try:
                 a , b = line.strip().split()
-                c = 90 - ord(a[0])
-                if string(fyszr(a, abs(c))) != b:
-                    print(a + "\n" + b)
-                    wyn.write(a + "\n" + b)
             except:
                 q += 1
+            if ord(a[0]) <= ord(b[0]):
+                c = ord(b[0]) - ord(a[0])
+            else:
+                c = 25 + ord(b[0]) - ord(a[0]) #90-65
+            w = fyszr(a, abs(c))
+            #print(str(w) + " " + str(b) + " " + str(a) + " " + str(c))
+            if w != b:
+                print(a + "\n" + b)
+                wyn.write(a + "\n" + b + "\n")
 if __name__ == '__main__':
     print(fyszr("SMIGIELSKI",13))
     jed()
